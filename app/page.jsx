@@ -44,9 +44,9 @@ const Page = () => {
     return () => unsubscribe();
   }, []);
 
-  return (
+  return (<>
     <div className='flex justify-center items-center h-screen bg-slate-500'>
-      <div className="flex flex-col w-full max-w-sm items-center space-y-2">
+      <div className="flex flex-col max-w-sm items-center space-y-2 w-[300px]">
         <div className="flex w-full items-center space-x-2">
           <Input value={newTodo.todo} onChange={(e) => setNewTodo({ ...newTodo, todo: e.target.value })} type="email" placeholder="Write a Todo" />
           <Button onClick={(e) => addTodo(e)} type="submit">Add Todo</Button>
@@ -54,7 +54,7 @@ const Page = () => {
         <div className='flex flex-col col-span-1 justify-center items-center'>
           <ul className=''>
             {todoList.map((item) => (
-              <li className='bg-slate-200 m-2 w-[400px] flex h-10 px-4 py-2 justify-between border-2 rounded-md' key={item.id}>
+              <li className='bg-slate-200 m-2 w-[300px] flex h-10 px-4 py-2 justify-between border-2 rounded-md' key={item.id}>
                 {editTodo.id === item.id ? (
                   <Input value={editTodo.text} onChange={(e) => setEditTodo({ ...editTodo, text: e.target.value })} />
                 ) : (
@@ -74,6 +74,9 @@ const Page = () => {
         </div>
       </div>
     </div>
+  
+  
+  </>
   );
 };
 
