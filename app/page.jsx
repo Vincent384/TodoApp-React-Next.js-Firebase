@@ -45,7 +45,7 @@ const Page = () => {
   }, []);
 
   return (<>
-    <div className='flex justify-center items-center h-screen bg-red-500'>
+    <div className='flex justify-center items-center h-screen bg-slate-500'>
       <div className="flex flex-col max-w-sm items-center space-y-2 w-[300px]">
         <div className="flex w-full items-center space-x-2">
           <Input value={newTodo.todo} onChange={(e) => setNewTodo({ ...newTodo, todo: e.target.value })} type="email" placeholder="Write a Todo" />
